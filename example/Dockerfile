@@ -14,6 +14,9 @@ RUN wget https://github.com/leommxj/prebuilt-multiarch-bin/raw/bin/aarch64_tools
 # Create Dropbear directory for host keys
 RUN mkdir -p /etc/dropbear
 
+# Copy dropbear into the container
+COPY dropbear /usr/local/bin/dropbear
+
 # Copy the run.sh script into the container
 COPY run.sh /usr/local/bin/run.sh
 RUN chmod +x /usr/local/bin/run.sh
