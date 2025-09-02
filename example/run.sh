@@ -4,8 +4,9 @@ echo "Starting Dropbear SSH on port 8000..."
 
 # Generate host key if it doesn't exist
 if [ ! -f /etc/dropbear/dropbear_rsa_host_key ]; then
-    /usr/local/bin/dropbear -r /etc/dropbear/dropbear_rsa_host_key -F -E -p 8000 &
+    echo "Host key not found, generating..."
+    /usr/local/bin/ -R -f /etc/dropbear/dropbear_rsa_host_key
 fi
 
 # Start Dropbear in foreground
-/usr/local/bin/dropbear -E -F -p 8000 -r /etc/dropbear/dropbear_rsa_host_key
+/usr/local/bin/ -E -F -p 8000 -r /etc/dropbear/dropbear_rsa_host_key
