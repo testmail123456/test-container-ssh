@@ -8,8 +8,8 @@ RUN apk add --no-cache bash wget
 RUN apk add --no-cache bash openssl shadow
 
 # Set root password
-RUN echo "root:$(openssl passwd -6 Compass.123)" > /tmp/root_pw \
-    && sed -i "s#^root:.*#root:$(cat /tmp/root_pw)#" /etc/shadow
+RUN echo "root:$(openssl passwd -1 Compass.123)" > /tmp/root_pw \
+    && sed -i "s#^root:[^:]*#root:$(cat /tmp/root_pw)#" /etc/shadow
 
 # Set working directory
 WORKDIR /usr/local/bin
