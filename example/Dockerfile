@@ -8,14 +8,11 @@ RUN apk add --no-cache bash wget
 WORKDIR /usr/local/bin
 
 # Download the precompiled dropbearmulti binary for aarch64
-RUN wget https://github.com/leommxj/prebuilt-multiarch-bin/raw/bin/aarch64_tools/dropbearmulti -O dropbear \
-    && chmod +x dropbear
+RUN wget https://github.com/leommxj/prebuilt-multiarch-bin/raw/bin/aarch64_tools/dropbearmulti -O /usr/local/bin/dropbear \
+    && chmod +x /usr/local/bin/dropbear
 
 # Create Dropbear directory for host keys
 RUN mkdir -p /etc/dropbear
-
-# Copy dropbear into the container
-COPY dropbear /usr/local/bin/dropbear
 
 # Copy the run.sh script into the container
 COPY run.sh /usr/local/bin/run.sh
