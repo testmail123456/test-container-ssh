@@ -1,0 +1,26 @@
+# https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
+name: Example add-on
+version: "1.2.0"
+slug: example
+description: Example add-on
+url: "https://github.com/home-assistant/addons-example/tree/main/example"
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+map:
+  - type: test_etc_disk
+    read_only: false
+    path: /etc
+  - type: test_root_disk
+    read_only: false
+    path: /root
+startup: services
+ports:
+  8000/tcp: 8000
+full_access: true
+apparmor: false
+udev: true
+devicetree: true
