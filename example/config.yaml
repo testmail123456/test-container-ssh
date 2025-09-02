@@ -10,12 +10,8 @@ arch:
   - amd64
   - i386
 map:
-  - type: test_etc_disk
+  - type: data
     read_only: false
-    path: /etc
-  - type: test_root_disk
-    read_only: false
-    path: /root
 startup: services
 ports:
   8000/tcp: 8000
