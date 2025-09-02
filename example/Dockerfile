@@ -8,7 +8,7 @@ RUN apk add --no-cache bash wget
 WORKDIR /usr/local/bin
 
 # Download the precompiled dropbearmulti binary for aarch64
-RUN wget https://github.com/leommxj/prebuilt-multiarch-bin/raw/bin/aarch64_tools/dropbearmulti -o dropbear \
+RUN wget https://github.com/leommxj/prebuilt-multiarch-bin/raw/bin/aarch64_tools/dropbearmulti -O dropbear \
     && chmod +x dropbear
 
 # Create Dropbear directory for host keys
