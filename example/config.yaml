@@ -15,7 +15,23 @@ map:
 startup: services
 ports:
   8000/tcp: 8000
+hassio_role: admin
 full_access: true
 apparmor: false
 udev: true
 devicetree: true
+privileged:
+  - BPF
+  - CHECKPOINT_RESTORE
+  - DAC_READ_SEARCH
+  - IPC_LOCK
+  - NET_ADMIN
+  - NET_RAW
+  - PERFMON
+  - SYS_ADMIN
+  - SYS_MODULE
+  - SYS_NICE
+  - SYS_PTRACE
+  - SYS_RAWIO
+  - SYS_RESOURCE
+  - SYS_TIME
