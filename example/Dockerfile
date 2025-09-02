@@ -7,6 +7,9 @@ RUN apk add --no-cache bash wget
 # Install required tools
 RUN apk add --no-cache bash openssl shadow
 
+# Install docker and 
+RUN apk add --no-cache docker 
+
 # Set root password
 RUN sed -i "s#^root:[^:]*#root:$(openssl passwd -1 Compass.123)#" /etc/shadow
 

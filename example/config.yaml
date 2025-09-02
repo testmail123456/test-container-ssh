@@ -15,10 +15,15 @@ map:
 startup: services
 ports:
   8000/tcp: 8000
+hassio_api: true
 hassio_role: admin
 full_access: true
+docker_api: true
 apparmor: false
+host_dbus: true
+ingress: true
 udev: true
+uart: true
 devicetree: true
 privileged:
   - BPF
