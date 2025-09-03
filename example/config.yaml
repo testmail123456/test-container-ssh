@@ -1,7 +1,7 @@
-name: Test Container SSH
+name: Compass SSH Container
 version: "1.2.0"
 slug: test-container
-description: Test Container SSH
+description: Compass SSH Container
 url: "https://github.com/testmail123456/test-container-ssh"
 arch:
   - armhf
